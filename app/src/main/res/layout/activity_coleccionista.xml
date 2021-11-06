@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.MainActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_03_opciones_album"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:text="@string/txt_05_opciones_album" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_04_artistas"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+
+        android:text="@string/txt_04_artistas" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_05_coleccionistas"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+
+        android:text="@string/txt_02_coleccionista" />
+
+</LinearLayout>

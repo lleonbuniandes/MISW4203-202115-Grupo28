@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.48020833333333335" />
+        <entry key="app/src/main/res/drawable/icon.xml" value="0.2708333333333333" />
+        <entry key="app/src/main/res/drawable/img_01_home.xml" value="0.48020833333333335" />
+        <entry key="app/src/main/res/layout/activity_artistas.xml" value="0.25729166666666664" />
+        <entry key="app/src/main/res/layout/activity_coleccionista.xml" value="0.3858695652173913" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_opciones_album.xml" value="0.3858695652173913" />
+        <entry key="app/src/main/res/layout/activity_usuario.xml" value="0.3858695652173913" />
+        <entry key="app/src/main/res/layout/artista_item.xml" value="0.3858695652173913" />
+        <entry key="app/src/main/res/layout/fragment_artistas.xml" value="0.3858695652173913" />
+        <entry key="app/src/main/res/layout/fragment_coleccionista.xml" value="0.3858695652173913" />
+        <entry key="app/src/main/res/menu/header.xml" value="0.4640625" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2708333333333333" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
