@@ -2,10 +2,8 @@ package edu.uniandes.vinilosapp.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import edu.uniandes.vinilosapp.R
 import edu.uniandes.vinilosapp.databinding.ActivityArtistasBinding
-import edu.uniandes.vinilosapp.views.fragment.ArtistasFragment
 
 import android.view.ViewGroup
 
@@ -17,6 +15,8 @@ class ArtistasActivity : AppCompatActivity() {
     private lateinit var binding: ActivityArtistasBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        MyToolbar().show(this, "Artistas", true)
+
         binding = ActivityArtistasBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()

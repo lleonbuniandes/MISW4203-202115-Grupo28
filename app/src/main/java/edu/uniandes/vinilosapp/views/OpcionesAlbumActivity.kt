@@ -8,5 +8,7 @@ class OpcionesAlbumActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_opciones_album)
+        MyToolbar().show(this, "Opciones Album", true)
+
     }
 }

@@ -7,5 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".views.ArtistasActivity">
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar">
+    </include>
 
 </LinearLayout>

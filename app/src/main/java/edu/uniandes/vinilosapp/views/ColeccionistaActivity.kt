@@ -12,6 +12,10 @@ class ColeccionistaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_coleccionista)
+        MyToolbar().show(this, "Coleccionista", true)
+
+
         binding = ActivityColeccionistaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -23,6 +27,7 @@ class ColeccionistaActivity : AppCompatActivity() {
             val intent = Intent(this, ArtistasActivity::class.java)
             startActivity(intent)
         }
+
 
     }
 
