@@ -1,5 +1,9 @@
 package edu.uniandes.vinilosapp.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Album(
     val id: Int,
     val name: String,
@@ -7,5 +11,5 @@ data class Album(
     val cover: String,
     val genre: String,
     val recordLabel: String,
-    val releaseDate: String,
-)
+    val releaseDate: String
+): Parcelable

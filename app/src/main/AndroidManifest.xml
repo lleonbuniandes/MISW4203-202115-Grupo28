@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VinilosApp">
         <activity
+            android:name=".view.album.AlbumDetailItem"
+            android:exported="false" />
+        <activity
             android:name=".view.album.AlbumList"
             android:exported="false" />
         <activity

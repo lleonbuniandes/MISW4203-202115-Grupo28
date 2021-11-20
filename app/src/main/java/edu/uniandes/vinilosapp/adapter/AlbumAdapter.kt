@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import edu.uniandes.vinilosapp.databinding.AlbumListItemBinding
 import edu.uniandes.vinilosapp.model.Album
+import edu.uniandes.vinilosapp.util.CommonUtil
 
 
 private val TAG = AlbumAdapter::class.simpleName
@@ -37,12 +38,16 @@ class AlbumAdapter: ListAdapter<Album, AlbumAdapter.AlbumViewHolder>(DiffCallbac
         holder.bind(album)
     }
 
+    fun setOnItemClickListener(onItemClickListener: (album: Album) -> Unit) {
+        this.onItemClickLister = onItemClickListener
+    }
+
     inner class AlbumViewHolder(private val binding: AlbumListItemBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(album:Album){
+        fun bind(album:Album) {
             binding.nombreBanda.text = album.name
             binding.anioCreacion.text = album.releaseDate
             val urlImage = album.cover
-            Glide.with(binding.root.context).load(urlImage).into(binding.albumImage)
+            Glide.with(binding.root.context).asBitmap().apply(CommonUtil.myOptions).load(urlImage).circleCrop().into(binding.albumImage)
             binding.albumGenero.text = album.genre
 
             binding.root.setOnClickListener {

@@ -1,11 +1,13 @@
 package edu.uniandes.vinilosapp.view.album
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.uniandes.vinilosapp.adapter.AlbumAdapter
 import edu.uniandes.vinilosapp.databinding.ActivityAlbumListBinding
+import edu.uniandes.vinilosapp.model.Album
 import edu.uniandes.vinilosapp.viewmodel.AlbumViewModel
 
 class AlbumList : AppCompatActivity() {
@@ -29,5 +31,16 @@ class AlbumList : AppCompatActivity() {
             adapter.submitList(listAlbum)
         })
 
+        adapter.setOnItemClickListener {
+            openDetailAlbum(it)
+        }
+
+
+    }
+
+    private fun openDetailAlbum(album: Album) {
+        val intent = Intent(this, AlbumDetailItem::class.java)
+        intent.putExtra(AlbumDetailItem.ALBUM_KEY,album)
+        startActivity(intent)
     }
 }
