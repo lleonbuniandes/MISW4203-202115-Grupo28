@@ -12,5 +12,5 @@ interface AlbumService {
     suspend fun getListAlbum(): List<Album>
 }
 
-var service: AlbumService = ConsumeApi.retrofit().create<AlbumService>(AlbumService::class.java)
+var service: AlbumService = ConsumeApi.retrofit().create(AlbumService::class.java)
 

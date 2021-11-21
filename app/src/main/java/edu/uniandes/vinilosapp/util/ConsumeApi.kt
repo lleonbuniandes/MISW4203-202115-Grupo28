@@ -14,5 +14,4 @@ object ConsumeApi {
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
     }
-
 }

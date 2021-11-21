@@ -1,4 +1,4 @@
-package edu.uniandes.vinilosapp.service
+package edu.uniandes.vinilosapp.service.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 private val TAG = AlbumViewModel::class.java.simpleName
+
 class AlbumViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
@@ -29,7 +30,7 @@ class AlbumViewModel(application: Application) : AndroidViewModel(application) {
             try {
                 repositoryAlbum.fetchAlbum()
             } catch (e: UnknownHostException) {
-                Log.d(TAG,"not found service connection", e)
+                Log.d(TAG, "not found service connection", e)
             }
         }
     }

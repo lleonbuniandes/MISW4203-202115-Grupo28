@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import edu.uniandes.vinilosapp.databinding.ActivityInvitadoBinding
 import edu.uniandes.vinilosapp.view.album.AlbumList
+import edu.uniandes.vinilosapp.view.artista.ArtistaList
 
 class InvitadoActivity : AppCompatActivity() {
 
@@ -17,6 +18,11 @@ class InvitadoActivity : AppCompatActivity() {
 
         binding.btnInvitAlbum.setOnClickListener {
             val intent = Intent(this,AlbumList::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnInvitArtista.setOnClickListener {
+            val intent = Intent(this,ArtistaList::class.java)
             startActivity(intent)
         }
     }
