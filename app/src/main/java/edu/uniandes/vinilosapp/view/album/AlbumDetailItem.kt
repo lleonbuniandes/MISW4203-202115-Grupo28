@@ -22,7 +22,7 @@ class AlbumDetailItem : AppCompatActivity() {
         setContentView(binding.root)
 
         val album = intent?.extras?.getParcelable<Album>(ALBUM_KEY)!!
-        Glide.with(binding.root.context).asBitmap().apply(CommonUtil.myOptions).load(album.cover).into(binding.imageView)
+        Glide.with(binding.root.context).asBitmap().apply(CommonUtil.myOptions).placeholder(R.drawable.music_default_image).error(R.drawable.music_default_image).load(album.cover).into(binding.imageView)
         binding.nombreBanda.text = album.name
         binding.anioCreacion.text = album.releaseDate
         binding.albumGenero.text = album.genre

@@ -1,56 +1,37 @@
 package edu.uniandes.vinilosapp.viewmodel
 
+import android.app.Application
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import edu.uniandes.vinilosapp.model.Album
+import edu.uniandes.vinilosapp.repository.AlbumRepository
 import edu.uniandes.vinilosapp.service.AlbumService
 import edu.uniandes.vinilosapp.service.service
 import edu.uniandes.vinilosapp.util.ConsumeApi
+import edu.uniandes.vinilosapp.util.getDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.net.UnknownHostException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AlbumViewModel: ViewModel() {
+private val TAG = AlbumViewModel::class.java.simpleName
+class AlbumViewModel(application: Application) : AndroidViewModel(application) {
 
-    private var _albumList = MutableLiveData<MutableList<Album>>()
-    val albumList:LiveData<MutableList<Album>>
-    get() = _albumList
+    private val database = getDatabase(application)
+    private val repositoryAlbum = AlbumRepository(database)
+
+    val albumList = repositoryAlbum.albumListFromDB
 
     init {
         viewModelScope.launch {
-            _albumList.value = fetchAlbum()
+            try {
+                repositoryAlbum.fetchAlbum()
+            } catch (e: UnknownHostException) {
+                Log.d(TAG,"not found service connection", e)
+            }
         }
-    }
-
-    private suspend fun fetchAlbum(): MutableList<Album> {
-        return withContext(Dispatchers.IO) {
-            val albumModel = service.getListAlbum()
-            val albumLister = parserList(albumModel)
-            albumLister
-        }
-    }
-
-    private fun parserList(albumModel: List<Album>): MutableList<Album> {
-        val finalAlbumList = mutableListOf<Album>()
-
-        for (album in albumModel){
-            val id = album.id
-            val name = album.name
-            val description = album.description
-            val cover = album.cover
-            val genre = album.genre
-            val recordLabel = album.recordLabel
-            val dateReleased = album.releaseDate
-
-            finalAlbumList.add(Album(id,name,description,cover,genre,recordLabel,dateReleased))
-        }
-        return finalAlbumList
-
     }
 
 

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import edu.uniandes.vinilosapp.R
 import edu.uniandes.vinilosapp.databinding.AlbumListItemBinding
 import edu.uniandes.vinilosapp.model.Album
 import edu.uniandes.vinilosapp.util.CommonUtil
@@ -47,7 +48,7 @@ class AlbumAdapter: ListAdapter<Album, AlbumAdapter.AlbumViewHolder>(DiffCallbac
             binding.nombreBanda.text = album.name
             binding.anioCreacion.text = album.releaseDate
             val urlImage = album.cover
-            Glide.with(binding.root.context).asBitmap().apply(CommonUtil.myOptions).load(urlImage).circleCrop().into(binding.albumImage)
+            Glide.with(binding.root.context).asBitmap().apply(CommonUtil.myOptions).placeholder(R.drawable.music_default_image).error(R.drawable.music_default_image).load(urlImage).circleCrop().into(binding.albumImage)
             binding.albumGenero.text = album.genre
 
             binding.root.setOnClickListener {
@@ -59,4 +60,5 @@ class AlbumAdapter: ListAdapter<Album, AlbumAdapter.AlbumViewHolder>(DiffCallbac
             }
         }
     }
+
 }
