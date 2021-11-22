@@ -29,6 +29,10 @@ class ArtistaAdapter: ListAdapter<Artista, ArtistaAdapter.ArtistaViewHolder>(Dif
         }
     }
 
+    fun setOnItemClickListener(onItemClickListener: (artista: Artista) -> Unit) {
+        this.onItemClickLister = onItemClickListener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistaAdapter.ArtistaViewHolder {
         val binding = ArtistaListItemBinding.inflate(LayoutInflater.from(parent.context))
         return ArtistaViewHolder(binding)

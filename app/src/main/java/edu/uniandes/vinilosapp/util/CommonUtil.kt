@@ -9,6 +9,6 @@ import java.time.format.DateTimeFormatter
 
 class CommonUtil {
     companion object {
-        val myOptions = RequestOptions().override(800, 600).centerCrop().fitCenter()
+        val myOptions = RequestOptions().override(400, 400).centerCrop().fitCenter()
     }
 }
