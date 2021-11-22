@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.uniandes.vinilosapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="false"
         android:icon="@drawable/icon"
@@ -10,24 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VinilosApp">
         <activity
-            android:name=".views.ArtistasActivity"
-            android:exported="false"
-            android:parentActivityName=".views.ColeccionistaActivity"/>
-        />
+            android:name=".view.artista.ColeccionistaList"
+            android:exported="false" />
         <activity
-            android:name=".views.OpcionesAlbumActivity"
-            android:exported="false"
-            android:parentActivityName=".views.ColeccionistaActivity"/>
+            android:name=".view.artista.ArtistaDetailItem"
+            android:exported="false" />
         <activity
-            android:name=".views.ColeccionistaActivity"
-            android:exported="false"
-            android:parentActivityName=".views.MainActivity"/>
+            android:name=".view.artista.ArtistaList"
+            android:exported="false" />
         <activity
-            android:name=".views.UsuarioActivity"
-            android:exported="false"
-            android:parentActivityName=".views.MainActivity"/>
+            android:name=".view.album.AlbumDetailItem"
+            android:exported="false" />
         <activity
-            android:name=".views.MainActivity"
+            android:name=".view.album.AlbumList"
+            android:exported="false" />
+        <activity
+            android:name=".view.AlbumOptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.InvitadoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ColeccionistaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
