@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VinilosApp">
         <activity
+            android:name=".view.artista.ColeccionistaList"
+            android:exported="false" />
+        <activity
             android:name=".view.artista.ArtistaDetailItem"
             android:exported="false" />
         <activity

@@ -1,20 +1,23 @@
 package edu.uniandes.vinilosapp.util
 
 import android.app.Application
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModel
-import edu.uniandes.vinilosapp.view.album.AlbumList
+import androidx.lifecycle.ViewModelProvider
 import edu.uniandes.vinilosapp.viewmodel.AlbumViewModel
 import edu.uniandes.vinilosapp.viewmodel.ArtistaViewModel
+import edu.uniandes.vinilosapp.viewmodel.ColeccionistaViewModel
 
-class ViewModelFactory(private val application: Application):
+@Suppress("UNCHECKED_CAST")
+class ViewModelFactory(private val application: Application) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
 
-        if(modelClass === AlbumViewModel::class.java){
+        if (modelClass === AlbumViewModel::class.java) {
             return AlbumViewModel(application) as T
-        }else if(modelClass === ArtistaViewModel::class.java) {
+        } else if (modelClass === ArtistaViewModel::class.java) {
             return ArtistaViewModel(application) as T
+        } else if (modelClass === ColeccionistaViewModel::class.java) {
+            return ColeccionistaViewModel(application) as T
         }
         throw IllegalArgumentException("ViewModel desconocido")
     }

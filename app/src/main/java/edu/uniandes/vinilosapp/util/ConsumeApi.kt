@@ -1,7 +1,5 @@
 package edu.uniandes.vinilosapp.util
 
-import com.squareup.moshi.Moshi
-import edu.uniandes.vinilosapp.service.AlbumService
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 

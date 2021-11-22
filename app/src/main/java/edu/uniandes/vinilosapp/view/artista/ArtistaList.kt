@@ -1,8 +1,8 @@
 package edu.uniandes.vinilosapp.view.artista
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.uniandes.vinilosapp.adapter.ArtistaAdapter
@@ -22,8 +22,7 @@ class ArtistaList : AppCompatActivity() {
 
         binding.artistaListRecycler.layoutManager = LinearLayoutManager(this)
 
-        val viewModel =
-            ViewModelProvider(this, ViewModelFactory(application)).get(ArtistaViewModel::class.java)
+        val viewModel = ViewModelProvider(this, ViewModelFactory(application)).get(ArtistaViewModel::class.java)
 
         val adapter = ArtistaAdapter()
         binding.artistaListRecycler.adapter = adapter

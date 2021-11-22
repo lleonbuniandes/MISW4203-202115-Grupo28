@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import edu.uniandes.vinilosapp.R
 import edu.uniandes.vinilosapp.databinding.ArtistaListItemBinding
-import edu.uniandes.vinilosapp.model.Album
 import edu.uniandes.vinilosapp.model.Artista
 import edu.uniandes.vinilosapp.util.CommonUtil
 

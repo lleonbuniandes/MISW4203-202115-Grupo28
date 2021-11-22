@@ -1,9 +1,11 @@
 package edu.uniandes.vinilosapp.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import edu.uniandes.vinilosapp.databinding.ActivityColeccionistaBinding
+import edu.uniandes.vinilosapp.view.artista.ArtistaList
+import edu.uniandes.vinilosapp.view.artista.ColeccionistaList
 
 class ColeccionistaActivity : AppCompatActivity() {
 
@@ -16,6 +18,16 @@ class ColeccionistaActivity : AppCompatActivity() {
 
         binding.btnOptAlbum.setOnClickListener {
             val intent = Intent(this, AlbumOptionActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnCollectorArtista.setOnClickListener {
+            val intent = Intent(this, ArtistaList::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnCollectorColeccionista.setOnClickListener {
+            val intent = Intent(this, ColeccionistaList::class.java)
             startActivity(intent)
         }
     }

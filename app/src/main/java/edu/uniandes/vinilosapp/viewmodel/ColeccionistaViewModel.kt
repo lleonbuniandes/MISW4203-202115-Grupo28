@@ -4,29 +4,28 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import edu.uniandes.vinilosapp.repository.AlbumRepository
+import edu.uniandes.vinilosapp.repository.ColeccionistaRepository
 import edu.uniandes.vinilosapp.util.getDatabase
 import kotlinx.coroutines.launch
 import java.net.UnknownHostException
 
-private val TAG = AlbumViewModel::class.java.simpleName
+private val TAG = ColeccionistaViewModel::class.java.simpleName
 
-class AlbumViewModel(application: Application) : AndroidViewModel(application) {
+class ColeccionistaViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
-    private val repositoryAlbum = AlbumRepository(database)
+    private val repositoryColeccionista = ColeccionistaRepository(database)
 
-    val albumList = repositoryAlbum.albumListFromDB
+    val coleccionistaList = repositoryColeccionista.coleccionistaListFromDB
 
     init {
         viewModelScope.launch {
             try {
-                repositoryAlbum.fetchAlbum()
+                repositoryColeccionista.fetchCollectors()
             } catch (e: UnknownHostException) {
                 Log.d(TAG, "not found service connection", e)
             }
         }
     }
-
 
 }
