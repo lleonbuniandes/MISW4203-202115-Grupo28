@@ -10,32 +10,45 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity" >
+        tools:context=".view.InvitadoActivity">
 
         <Button
-            android:id="@+id/btnMainColeccionista"
+            android:id="@+id/btnInvitArtista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginTop="368dp"
-            android:text="Coleccionista"
+            android:text="Artistas"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnInvitAlbum" />
+
+        <Button
+            android:id="@+id/btnInvitAlbum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="196dp"
+            android:layout_marginEnd="24dp"
+            android:text="Albumes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnMainInvitado"
+            android:id="@+id/btnInivitCollector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Invitado"
+            android:text="Coleccionistas"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnMainColeccionista" />
+            app:layout_constraintTop_toBottomOf="@+id/btnInvitArtista" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="16dp"
+        tools:ignore="RtlHardcoded">
+
+        <ImageView
+
+            android:id="@+id/usuario_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@android:drawable/ic_menu_camera"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignTop="@+id/usuario_image"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/usuario_image"
+            android:text="Nombre"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_label"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="-19dp"
+            android:layout_toRightOf="@+id/name_label"
+            tools:text="Nombre banda" />
+
+
+        <TextView
+            android:id="@+id/anio_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/usuario_image"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="21dp"
+            android:layout_toEndOf="@+id/usuario_image"
+            android:text="Email"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_label"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@+id/name_label"
+            tools:text="Año creación" />
+
+
+        <TextView
+            android:id="@+id/genero_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/usuario_image"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="44dp"
+            android:layout_toEndOf="@+id/usuario_image"
+            android:text="Telf."
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/telefono"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_label"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="26dp"
+            android:layout_toRightOf="@+id/name_label"
+            tools:text="Genero" />
+
+
+    </RelativeLayout>
+</layout>
