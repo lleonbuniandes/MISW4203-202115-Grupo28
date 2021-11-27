@@ -13,22 +13,15 @@ class ColeccionistaRepository(private val database: RoomDB) {
 
     suspend fun fetchCollectors() {
         return withContext(Dispatchers.IO) {
-            val coleccionistaModelResponse = serviceColeccionista.getListCollectors()
-            val coleccionistaLister = parseList(coleccionistaModelResponse)
-
-            database.coleccionistaDao.insertAllCollector(coleccionistaLister)
+            database.coleccionistaDao.insertAllCollector(parseList(serviceColeccionista.getListCollectors()))
         }
     }
 
     private fun parseList(colectorResponse: List<Coleccionista>): MutableList<Coleccionista> {
         val finalCollectorList = mutableListOf<Coleccionista>()
 
-        for (colector in colectorResponse) {
-            val id = colector.id
-            val name = colector.name
-            val email = colector.email
-            val telf = colector.telephone
-            finalCollectorList.add(Coleccionista(id, name, email, telf))
+        colectorResponse.forEach { colector ->
+            finalCollectorList.add(Coleccionista(colector.id, colector.name, colector.email, colector.telephone))
         }
 
         return finalCollectorList

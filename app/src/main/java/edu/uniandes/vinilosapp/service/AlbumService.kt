@@ -10,5 +10,8 @@ interface AlbumService {
     suspend fun getListAlbum(): List<Album>
 }
 
-var service: AlbumService = ConsumeApi.retrofit().create(AlbumService::class.java)
-
+object AlbumServiceApi{
+    val serviceAlbum : AlbumService by lazy {
+        ConsumeApi.retrofit().create(AlbumService::class.java)
+    }
+}
