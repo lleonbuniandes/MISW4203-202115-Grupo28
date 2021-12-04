@@ -10,4 +10,8 @@ interface ColeccionistaService {
     suspend fun getListCollectors(): List<Coleccionista>
 }
 
-var serviceColeccionista: ColeccionistaService = ConsumeApi.retrofit().create(ColeccionistaService::class.java)
+object ServiceColeccionistaApi{
+    val serviceColeccionista: ColeccionistaService by lazy{
+        ConsumeApi.retrofit().create(ColeccionistaService::class.java)
+    }
+}

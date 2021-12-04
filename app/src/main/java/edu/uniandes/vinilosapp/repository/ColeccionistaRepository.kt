@@ -2,7 +2,7 @@ package edu.uniandes.vinilosapp.repository
 
 import androidx.lifecycle.LiveData
 import edu.uniandes.vinilosapp.model.Coleccionista
-import edu.uniandes.vinilosapp.service.serviceColeccionista
+import edu.uniandes.vinilosapp.service.ServiceColeccionistaApi
 import edu.uniandes.vinilosapp.util.RoomDB
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -13,7 +13,7 @@ class ColeccionistaRepository(private val database: RoomDB) {
 
     suspend fun fetchCollectors() {
         return withContext(Dispatchers.IO) {
-            database.coleccionistaDao.insertAllCollector(parseList(serviceColeccionista.getListCollectors()))
+            database.coleccionistaDao.insertAllCollector(parseList(ServiceColeccionistaApi.serviceColeccionista.getListCollectors()))
         }
     }
 
