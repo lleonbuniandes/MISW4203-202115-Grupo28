@@ -22,9 +22,9 @@ class AlbumViewModel(application: Application) : AndroidViewModel(application) {
 
     val albumList = repositoryAlbum.albumListFromDB
 
-    private val _status = MutableLiveData<Album>()
+    private val _newAlbum = MutableLiveData<Album>()
     val status: LiveData<Album>
-    get() = _status
+    get() = _newAlbum
 
 
     init {
@@ -39,7 +39,7 @@ class AlbumViewModel(application: Application) : AndroidViewModel(application) {
 
     fun createAlbum(album: AlbumRequest){
          viewModelScope.launch {
-             _status.value = repositoryAlbum.createAlbum(album)
+             _newAlbum.value = repositoryAlbum.createAlbum(album)
          }
     }
 
