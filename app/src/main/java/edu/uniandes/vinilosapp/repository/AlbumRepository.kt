@@ -2,7 +2,8 @@ package edu.uniandes.vinilosapp.repository
 
 import androidx.lifecycle.LiveData
 import edu.uniandes.vinilosapp.model.Album
-import edu.uniandes.vinilosapp.service.service
+import edu.uniandes.vinilosapp.model.jsonrequest.AlbumRequest
+import edu.uniandes.vinilosapp.service.AlbumServiceApi
 import edu.uniandes.vinilosapp.util.RoomDB
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -13,26 +14,32 @@ class AlbumRepository(private val database: RoomDB) {
 
     suspend fun fetchAlbum() {
         return withContext(Dispatchers.IO) {
-            val albumModel = service.getListAlbum()
-            val albumLister = parserList(albumModel)
+            database.albumDao.insertAllAlbum(parserList(AlbumServiceApi.serviceAlbum.getListAlbum()))
+        }
+    }
 
-            database.albumDao.insertAllAlbum(albumLister)
+    suspend fun createAlbum(album:AlbumRequest): Album{
+        return withContext(Dispatchers.IO) {
+            val response = AlbumServiceApi.serviceAlbum.insertAlbum(album)
+            response
         }
     }
 
     private fun parserList(albumModel: List<Album>): MutableList<Album> {
         val finalAlbumList = mutableListOf<Album>()
 
-        for (album in albumModel){
-            val id = album.id
-            val name = album.name
-            val description = album.description
-            val cover = album.cover
-            val genre = album.genre
-            val recordLabel = album.recordLabel
-            val dateReleased = album.releaseDate
-
-            finalAlbumList.add(Album(id,name,description,cover,genre,recordLabel,dateReleased))
+        albumModel.forEach { album ->
+            finalAlbumList.add(
+                Album(
+                    album.id,
+                    album.name,
+                    album.description,
+                    album.cover,
+                    album.genre,
+                    album.recordLabel,
+                    album.releaseDate
+                )
+            )
         }
         return finalAlbumList
 

@@ -9,4 +9,8 @@ interface ArtistaService {
     @GET("musicians")
     suspend fun getListArtists(): List<ArtistaAlbum>
 }
-var serviceArtista: ArtistaService = ConsumeApi.retrofit().create(ArtistaService::class.java)
+object ArtistaServiceApi{
+    val serviceArtista : ArtistaService by lazy {
+        ConsumeApi.retrofit().create(ArtistaService::class.java)
+    }
+}

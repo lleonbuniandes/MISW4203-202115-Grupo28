@@ -41,11 +41,8 @@ class ColeccionistaAdapter: ListAdapter<Coleccionista, ColeccionistaAdapter.Cole
         holder.bind(collector)
     }
 
-
     inner class ColeccionistaViewHolder(private val binding: ColeccionistaListItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(collector: Coleccionista) {
-            Log.i(TAG,"##### ingresando")
-            Log.i(TAG,collector.email)
             binding.nombre.text = collector.name
             binding.email.text = collector.email
             binding.telefono.text = collector.telephone

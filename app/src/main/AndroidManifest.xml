@@ -3,6 +3,7 @@
     package="edu.uniandes.vinilosapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VinilosApp">
+        <activity
+            android:name=".view.album.AddAlbum"
+            android:exported="false" />
+        <activity
+            android:name=".view.album.Add_Album"
+            android:exported="false" />
         <activity
             android:name=".view.artista.ColeccionistaList"
             android:exported="false" />
