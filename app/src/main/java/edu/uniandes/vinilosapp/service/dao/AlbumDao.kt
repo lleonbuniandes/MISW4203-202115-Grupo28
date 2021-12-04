@@ -14,4 +14,7 @@ interface AlbumDao {
 
     @Query("select * from tblAlbum order by id desc")
     fun getAllAlbums(): LiveData<MutableList<Album>>
+
+    @Insert
+    fun insertAlbum(album:Album)
 }

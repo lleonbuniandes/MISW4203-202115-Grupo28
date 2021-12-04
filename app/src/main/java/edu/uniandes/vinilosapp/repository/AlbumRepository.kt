@@ -2,6 +2,7 @@ package edu.uniandes.vinilosapp.repository
 
 import androidx.lifecycle.LiveData
 import edu.uniandes.vinilosapp.model.Album
+import edu.uniandes.vinilosapp.model.jsonrequest.AlbumRequest
 import edu.uniandes.vinilosapp.service.AlbumServiceApi
 import edu.uniandes.vinilosapp.util.RoomDB
 import kotlinx.coroutines.Dispatchers
@@ -14,6 +15,13 @@ class AlbumRepository(private val database: RoomDB) {
     suspend fun fetchAlbum() {
         return withContext(Dispatchers.IO) {
             database.albumDao.insertAllAlbum(parserList(AlbumServiceApi.serviceAlbum.getListAlbum()))
+        }
+    }
+
+    suspend fun createAlbum(album:AlbumRequest): Album{
+        return withContext(Dispatchers.IO) {
+            val response = AlbumServiceApi.serviceAlbum.insertAlbum(album)
+            response
         }
     }
 
