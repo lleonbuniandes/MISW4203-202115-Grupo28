@@ -1,4 +1,4 @@
-package edu.uniandes.vinilosapp.model.jsonresponse
+package edu.uniandes.vinilosapp.model.jsonresponse.album
 
 import edu.uniandes.vinilosapp.model.Album
 

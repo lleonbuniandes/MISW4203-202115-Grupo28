@@ -2,7 +2,7 @@ package edu.uniandes.vinilosapp.repository
 
 import androidx.lifecycle.LiveData
 import edu.uniandes.vinilosapp.model.Coleccionista
-import edu.uniandes.vinilosapp.model.jsonresponse.CollectorResponse
+import edu.uniandes.vinilosapp.model.jsonresponse.collector.CollectorResponse
 import edu.uniandes.vinilosapp.service.ServiceColeccionistaApi
 import edu.uniandes.vinilosapp.util.RoomDB
 import kotlinx.coroutines.Dispatchers
