@@ -11,7 +11,7 @@ import edu.uniandes.vinilosapp.service.dao.AlbumDao
 import edu.uniandes.vinilosapp.service.dao.ArtistaDao
 import edu.uniandes.vinilosapp.service.dao.ColeccionistaDao
 
-@Database(entities = [Album::class, Artista::class, Coleccionista::class], version = 4)
+@Database(entities = [Album::class, Artista::class, Coleccionista::class], version = 5)
 abstract class RoomDB : RoomDatabase() {
 
     abstract val albumDao: AlbumDao
