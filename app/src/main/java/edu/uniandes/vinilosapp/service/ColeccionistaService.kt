@@ -1,6 +1,6 @@
 package edu.uniandes.vinilosapp.service
 
-import edu.uniandes.vinilosapp.model.jsonresponse.CollectorResponse
+import edu.uniandes.vinilosapp.model.jsonresponse.collector.CollectorResponse
 import edu.uniandes.vinilosapp.util.ConsumeApi
 import retrofit2.http.GET
 

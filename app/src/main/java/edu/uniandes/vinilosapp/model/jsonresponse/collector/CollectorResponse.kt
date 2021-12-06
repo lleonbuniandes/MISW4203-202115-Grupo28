@@ -1,6 +1,7 @@
-package edu.uniandes.vinilosapp.model.jsonresponse
+package edu.uniandes.vinilosapp.model.jsonresponse.collector
 
 import android.os.Parcelable
+import edu.uniandes.vinilosapp.model.jsonresponse.album.AlbumCollectorResponse
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

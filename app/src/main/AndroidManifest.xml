@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VinilosApp">
         <activity
+            android:name=".view.track.TrackList"
+            android:exported="false" />
+        <activity
             android:name=".view.coleccionista.ColeccionistaDetailItem"
             android:exported="false" />
         <activity
