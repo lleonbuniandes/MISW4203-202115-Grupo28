@@ -2,7 +2,7 @@ package edu.uniandes.vinilosapp.repository
 
 import androidx.lifecycle.LiveData
 import edu.uniandes.vinilosapp.model.Artista
-import edu.uniandes.vinilosapp.model.jsonresponse.ArtistaAlbum
+import edu.uniandes.vinilosapp.model.jsonresponse.album.ArtistaAlbum
 import edu.uniandes.vinilosapp.service.ArtistaServiceApi
 import edu.uniandes.vinilosapp.util.RoomDB
 import kotlinx.coroutines.Dispatchers

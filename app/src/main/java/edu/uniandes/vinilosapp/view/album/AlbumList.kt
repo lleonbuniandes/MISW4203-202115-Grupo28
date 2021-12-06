@@ -2,6 +2,7 @@ package edu.uniandes.vinilosapp.view.album
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,10 +38,15 @@ class AlbumList : AppCompatActivity() {
         }
 
         binding.fabAdd.setOnClickListener {
+
+            viewModel.track.observe(this,{
+                Log.i("############",  it.tracks[0].name)
+            })
             val intent = Intent(this,AddAlbum::class.java)
             startActivity(intent)
             finish()
         }
+
 
     }
 
