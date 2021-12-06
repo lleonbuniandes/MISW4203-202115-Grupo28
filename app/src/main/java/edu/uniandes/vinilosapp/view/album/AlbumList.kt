@@ -1,19 +1,20 @@
 package edu.uniandes.vinilosapp.view.album
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
+import android.util.Log
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.uniandes.vinilosapp.adapter.AlbumAdapter
 import edu.uniandes.vinilosapp.databinding.ActivityAlbumListBinding
 import edu.uniandes.vinilosapp.model.Album
-import edu.uniandes.vinilosapp.util.ViewModelFactory
 import edu.uniandes.vinilosapp.viewmodel.AlbumViewModel
 
 class AlbumList : AppCompatActivity() {
 
     private lateinit var binding: ActivityAlbumListBinding
+    private val viewModel: AlbumViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +23,7 @@ class AlbumList : AppCompatActivity() {
 
         binding.albumListRecycler.layoutManager = LinearLayoutManager(this)
 
-        val viewModel = ViewModelProvider(this,ViewModelFactory(application)).get(AlbumViewModel::class.java)
+        //val viewModel = ViewModelProvider(this,ViewModelFactory(application)).get(AlbumViewModel::class.java)
 
         val adapter = AlbumAdapter()
         binding.albumListRecycler.adapter = adapter
@@ -35,6 +36,18 @@ class AlbumList : AppCompatActivity() {
         adapter.setOnItemClickListener {
             openDetailAlbum(it)
         }
+
+        binding.fabAdd.setOnClickListener {
+
+            viewModel.track.observe(this,{
+                Log.i("############",  it.tracks[0].name)
+            })
+            val intent = Intent(this,AddAlbum::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
     }
 
     private fun openDetailAlbum(album: Album) {
@@ -42,4 +55,6 @@ class AlbumList : AppCompatActivity() {
         intent.putExtra(AlbumDetailItem.ALBUM_KEY,album)
         startActivity(intent)
     }
+
+
 }
