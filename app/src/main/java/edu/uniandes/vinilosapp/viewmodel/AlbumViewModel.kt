@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import edu.uniandes.vinilosapp.model.Album
 import edu.uniandes.vinilosapp.model.jsonrequest.AlbumRequest
+import edu.uniandes.vinilosapp.model.jsonresponse.track.AlbumTrack
 import edu.uniandes.vinilosapp.repository.AlbumRepository
 import edu.uniandes.vinilosapp.util.getDatabase
 import kotlinx.coroutines.launch
@@ -26,6 +27,10 @@ class AlbumViewModel(application: Application) : AndroidViewModel(application) {
     val status: LiveData<Album>
     get() = _newAlbum
 
+    private val trackAlbum = MutableLiveData<AlbumTrack>()
+    val track:LiveData<AlbumTrack>
+    get()= trackAlbum
+
 
     init {
         viewModelScope.launch {
@@ -43,5 +48,9 @@ class AlbumViewModel(application: Application) : AndroidViewModel(application) {
          }
     }
 
-
+    fun getTracksByAlbumId(albumId: String){
+        viewModelScope.launch{
+            trackAlbum.value = repositoryAlbum.getTracksByAlbumId(albumId)
+        }
+    }
 }

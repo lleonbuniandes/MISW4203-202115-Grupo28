@@ -1,12 +1,15 @@
 package edu.uniandes.vinilosapp.view.artista
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import edu.uniandes.vinilosapp.R
+import edu.uniandes.vinilosapp.adapter.ColeccionistaAdapter
 import edu.uniandes.vinilosapp.databinding.ActivityArtistaDetailItemBinding
 import edu.uniandes.vinilosapp.model.Artista
 import edu.uniandes.vinilosapp.util.CommonUtil
+import edu.uniandes.vinilosapp.view.track.TrackList
 
 class ArtistaDetailItem : AppCompatActivity() {
 
@@ -30,5 +33,15 @@ class ArtistaDetailItem : AppCompatActivity() {
         binding.numberAlbums.text = artista.albums.toString()
         binding.descripcionArtista.text = artista.description
 
+        val adapter = ColeccionistaAdapter()
+        adapter.setOnItemClickListener {
+            openTrackList("578")
+        }
+    }
+
+    private fun openTrackList(id: String) {
+        val intent = Intent(this, TrackList::class.java)
+        intent.putExtra(TrackList.ALBUM_TRACK_KEY,id)
+        startActivity(intent)
     }
 }
