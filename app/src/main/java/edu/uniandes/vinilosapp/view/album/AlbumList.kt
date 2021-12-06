@@ -2,7 +2,6 @@ package edu.uniandes.vinilosapp.view.album
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,8 +22,6 @@ class AlbumList : AppCompatActivity() {
 
         binding.albumListRecycler.layoutManager = LinearLayoutManager(this)
 
-        //val viewModel = ViewModelProvider(this,ViewModelFactory(application)).get(AlbumViewModel::class.java)
-
         val adapter = AlbumAdapter()
         binding.albumListRecycler.adapter = adapter
 
@@ -39,15 +36,11 @@ class AlbumList : AppCompatActivity() {
 
         binding.fabAdd.setOnClickListener {
 
-            viewModel.track.observe(this,{
-                Log.i("############",  it.tracks[0].name)
-            })
+            viewModel.track.observe(this,{})
             val intent = Intent(this,AddAlbum::class.java)
             startActivity(intent)
             finish()
         }
-
-
     }
 
     private fun openDetailAlbum(album: Album) {
