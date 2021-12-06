@@ -41,7 +41,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="56dp"
             android:layout_marginEnd="32dp"
-            android:text="@string/txt_03_invitado"
+            android:text="@string/txt_06_albumes"
             app:backgroundTint="@color/secondary_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
