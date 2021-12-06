@@ -1,5 +1,27 @@
 <resources>
-    <string name="app_name">VinilosApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="app_name">Vinilos App</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="txt_01_ingresa">Ingresa como</string>
+    <string name="txt_02_coleccionista">Coleccionista</string>
+    <string name="txt_03_invitado">Invitado</string>
+    <string name="txt_04_artistas">Artistas</string>
+    <string name="txt_05_opciones_album">Opciones de album</string>
+
+    <string name="txt_06_albumes">Albumes</string>
+    <string name="txt_07_volver">Vovler</string>
+    <string name="txt_08_agregar_album">Agregar album</string>
+    <string name="txt_09_asociar_cancion">Asociar canciones</string>
+    <string name="txt_10_lista_album">Ver Albumes</string>
+    <string name="txt_11_agregar_album">Agregar Album</string>
+    <string name="txt_12_descripcion_album">Descripción del Album</string>
+    <string name="txt_13_nombre_album">Nombre del álbum</string>
+    <string name="txt_14_fecha">Seleccione fecha</string>
+    <string name="txt_15_genero">Género</string>
+    <string name="txt_16_record">Record</string>
+    <string name="txt_17_guardar_album">Guardar Álbum</string>
+    <string name="txt_18_subir_imagen">Subir Imagen</string>
+    <string name="txt_19_detalle_album">Detalle de album</string>
+    <string name="txt_20_"></string>
 </resources>

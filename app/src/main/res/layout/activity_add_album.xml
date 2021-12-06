@@ -1,91 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.album.AddAlbum">
+        <include
+            android:id="@+id/include"
+            layout="@layout/action_bar_toolbar"></include>
 
 
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
+            android:id="@+id/txt_01_ingresa"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Agregar Álbum"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/txt_06_albumes"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/primary_purple"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include" />
+
 
         <EditText
             android:id="@+id/txt_nombre_album"
-            android:layout_width="373dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-
-            android:layout_below="@+id/textView6"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="28dp"
-            android:hint="Nombre del álbum"
-            android:minHeight="48dp" />
+            android:layout_below="@+id/txt_01_ingresa"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/txt_13_nombre_album"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_01_ingresa" />
 
         <EditText
             android:id="@+id/txt_fecha_album"
-            android:layout_width="373dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-
             android:layout_below="@+id/txt_nombre_album"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="28dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
             android:clickable="false"
             android:focusable="false"
-            android:hint="Seleccione fecha"
-            android:minHeight="48dp" />
-
+            android:hint="@string/txt_14_fecha"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nombre_album" />
 
         <EditText
             android:id="@+id/txt_descripcion_album"
-            android:layout_width="373dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-
             android:layout_below="@+id/txt_fecha_album"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="28dp"
-            android:hint="Descripción del Album"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/txt_12_descripcion_album"
             android:inputType="textMultiLine"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_fecha_album" />
 
         <Spinner
             android:id="@+id/txt_genero_album"
-            android:layout_width="373dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-
             android:layout_below="@+id/txt_descripcion_album"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="28dp"
-            android:hint="Género"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/txt_15_genero"
             android:inputType="textMultiLine"
             android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_descripcion_album"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Spinner
             android:id="@+id/txt_record_album"
-            android:layout_width="373dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-
             android:layout_below="@+id/txt_genero_album"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="28dp"
-            android:hint="Record"
-
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/txt_16_record"
             android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_genero_album"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
@@ -95,11 +122,12 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="33dp"
-            android:layout_marginEnd="33dp"
-            android:layout_marginBottom="9dp"
-            android:backgroundTint="#2196F3"
-            android:text="Guardar Álbum" />
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="#7D53DE"
+            android:text="@string/txt_17_guardar_album"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnSubirImagen"
@@ -108,32 +136,35 @@
             android:layout_above="@+id/btnSaveAlbum"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="130dp"
-            android:layout_marginEnd="130dp"
-            android:layout_marginBottom="7dp"
-            android:backgroundTint="#4CAF50"
-            android:text="Subir Imagen" />
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#BEA9EF"
+            android:text="@string/txt_18_subir_imagen"
+            app:layout_constraintBottom_toTopOf="@+id/btnSaveAlbum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@color/primary_purple" />
 
         <ImageView
             android:id="@+id/img_image_cover"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="108dp"
+            android:layout_height="128dp"
             android:layout_above="@+id/btnSubirImagen"
             android:layout_below="@+id/txt_record_album"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="96dp"
-            android:layout_marginBottom="30dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:scaleX="1"
             android:scaleY="1"
             android:tag="bg"
+            app:layout_constraintBottom_toTopOf="@+id/btnSubirImagen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_record_album"
             tools:srcCompat="@tools:sample/avatars" />
 
 
-
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

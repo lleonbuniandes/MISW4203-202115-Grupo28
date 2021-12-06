@@ -3,13 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_circle_blue_light.xml" value="0.2890625" />
+        <entry key="app/src/main/res/drawable/ic_circle_purple_light.xml" value="0.2890625" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2890625" />
+        <entry key="app/src/main/res/drawable/img_01_home.xml" value="0.2890625" />
+        <entry key="app/src/main/res/layout/action_bar_toolbar.xml" value="0.25407608695652173" />
         <entry key="app/src/main/res/layout/activity_add_album.xml" value="0.33958333333333335" />
-        <entry key="app/src/main/res/layout/activity_album_detail_item.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_album_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_album_detail_item.xml" value="0.35912847483095417" />
+        <entry key="app/src/main/res/layout/activity_album_list.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_album_option.xml" value="0.2599118942731278" />
         <entry key="app/src/main/res/layout/activity_artista_detail_item.xml" value="0.3546875" />
         <entry key="app/src/main/res/layout/activity_artista_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_coleccionista.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_coleccionista_detail_item.xml" value="0.27291666666666664" />
+        <entry key="app/src/main/res/layout/activity_coleccionista_list.xml" value="0.27291666666666664" />
         <entry key="app/src/main/res/layout/activity_invitado.xml" value="0.3546875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3546875" />
         <entry key="app/src/main/res/layout/album_list_item.xml" value="0.3546875" />
