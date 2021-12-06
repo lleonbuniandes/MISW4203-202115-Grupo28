@@ -11,45 +11,78 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.ColeccionistaActivity">
+        <include
+            android:id="@+id/include"
+            layout="@layout/action_bar_toolbar"></include>
 
-        <Button
-            android:id="@+id/btnCollectorArtista"
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/txt_01_ingresa"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Artistas"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/txt_02_coleccionista"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/primary_purple"
+            android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOptAlbum" />
+            app:layout_constraintTop_toBottomOf="@+id/include" />
 
         <Button
             android:id="@+id/btnOptAlbum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="268dp"
-            android:layout_marginEnd="24dp"
-            android:text="Opciones de Álbum"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/txt_05_opciones_album"
+            app:backgroundTint="@color/secondary_purple"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_01_ingresa"
+            app:strokeColor="@color/primary_blue"
+            app:strokeWidth="2dp" />
+
+        <Button
+            android:id="@+id/btnCollectorArtista"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/txt_04_artistas"
+            app:backgroundTint="@color/secondary_purple"
+            app:layout_constraintBottom_toTopOf="@+id/btnCollectorColeccionista"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnOptAlbum"
+            app:strokeColor="@color/primary_blue"
+            app:strokeWidth="2dp" />
+
 
         <Button
             android:id="@+id/btnCollectorColeccionista"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Coleccionistas"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="156dp"
+            android:text="@string/txt_02_coleccionista"
+            app:backgroundTint="@color/secondary_purple"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnCollectorArtista" />
+            app:strokeColor="@color/primary_blue"
+            app:strokeWidth="2dp" />>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
