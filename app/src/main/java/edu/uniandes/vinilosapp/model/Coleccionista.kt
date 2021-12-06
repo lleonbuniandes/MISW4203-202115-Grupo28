@@ -12,5 +12,6 @@ data class Coleccionista(
     val id: Int,
     val name: String,
     val email: String,
-    val telephone: String
+    val telephone: String,
+    val album: String
 ): Parcelable
